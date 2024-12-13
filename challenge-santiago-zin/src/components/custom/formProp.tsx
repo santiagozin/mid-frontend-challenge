@@ -145,8 +145,17 @@ const FormProperty: React.FC<FormPropertyProps> = ({ values, edit, setEdit, onSu
           name="status"
           control={control}
           rules={{ required: "El estado es obligatorio" }}
-          render={({ field }) => <Input id="status" type="text" {...field} />}
-          disabled={edit}
+          render={({ field }) => (
+            <select
+              id="status"
+              {...field}
+              className="w-full p-2 border-2 border-gray-300 rounded-md"
+              disabled={edit}
+            >
+              <option value="sale">Sale</option>
+              <option value="rent">Rent</option>
+            </select>
+          )}
         />
         {errors.status && (
           <span className="text-red-500">{errors.status.message}</span>

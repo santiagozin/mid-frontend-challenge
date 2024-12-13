@@ -20,7 +20,7 @@ const CreateProperty = () => {
     images: [],
     area: "",
     isActive: true,
-    status: "available",
+    status: "sale",
     createdAt: new Date().toISOString(),
     updatedAt: new Date().toISOString(),
     userId: "",

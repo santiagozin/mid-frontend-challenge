@@ -21,5 +21,5 @@ export interface Property {
     price: string;
     area: string;
     type: string;
-    status: string;
+    status: 'sale' | 'rent';
   };
