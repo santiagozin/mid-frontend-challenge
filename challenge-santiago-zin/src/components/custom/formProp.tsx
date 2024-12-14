@@ -100,10 +100,8 @@ const FormProperty: React.FC<FormPropertyProps> = ({ values, edit, setEdit, onSu
             required: "El precio es obligatorio",
             validate: {
               isNumber: (value) =>
-                /^\d+(\.\d+)?$/.test(value) || "El precio debe ser un número",
-              isPositive: (value) =>
-                parseFloat(value) > 0 ||
-                "El precio debe ser un número positivo",
+                /^\d+(\.\d+)?$/.test(value.toString()) || "El precio debe ser un número",
+              isPositive: (value: number) => value > 0 || "El precio debe ser un número positivo",
             },
           }}
           render={({ field }) => <Input id="price" type="text" {...field} />}
